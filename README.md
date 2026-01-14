@@ -12,4 +12,7 @@
 
 ## Sign-up form
 - i-frame of form
+
 ### By: Celine, Michael & Al
+Project restrictions:
+use React & Next.js
