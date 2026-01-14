@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -34,3 +35,27 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+=======
+# Group1_Rootech_project
+## Home Page:
+- posters
+- Description
+- Sign-up button link
+- Find out more button (link to sample games)
+
+## Find out more
+- Button to each game
+- Instructions for the game
+- Game
+
+## Sign-up form
+- i-frame of form
+
+### By: Celine, Michael & Al
+Project restrictions:
+use React & Next.js
+
+## Installation Instructions:
+1. Download node.js --> https://nodejs.org/en/download
+2. Using VScode --> tailwind
+3. Run in VS terminal --> npx create-next-app@latest .
