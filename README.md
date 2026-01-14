@@ -20,3 +20,4 @@ use React & Next.js
 ## Installation Instructions:
 1. Download node.js --> https://nodejs.org/en/download
 2. Using VScode --> tailwind
+3. Run in VS terminal --> npx create-next-app@latest .
