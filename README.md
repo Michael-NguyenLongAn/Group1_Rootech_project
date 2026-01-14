@@ -16,3 +16,7 @@
 ### By: Celine, Michael & Al
 Project restrictions:
 use React & Next.js
+
+## Installation Instructions:
+1. Download node.js --> https://nodejs.org/en/download
+2. Using VScode --> tailwind
