@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig: any = {
+  experimental: {
+    allowedDevOrigins: ["localhost:3000", "192.168.152.1:3000"],
+  },
 };
 
 module.exports = {
