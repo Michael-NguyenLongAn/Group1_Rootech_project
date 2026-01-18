@@ -46,9 +46,9 @@ export default function MinefieldPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-6 text-center pb-20">
-      {/* Description Section */}
+      {/*title & descrption*/}
       <div className="mb-8">
-        <h2 className="text-3xl font-serif font-bold uppercase text-[#a91c1b] mb-4">
+        <h2 className="text-2xl font-bold mb-4 uppercase text-[#ba8358]">
           Crime Scene Navigation
         </h2>
         <p className="text-xl italic text-black max-w-2xl mx-auto">
@@ -58,7 +58,7 @@ export default function MinefieldPage() {
 
       <div className="flex flex-col items-center justify-center min-h-[500px] bg-white/30 p-8 rounded-2xl border-2 border-[#ba8358] shadow-lg">
         
-        {/* START PORTION */}
+        {/*game component start*/}
         {gameState === "start" && (
           <div className="flex flex-col items-center space-y-6">
             <div className="border-4 border-[#ba8358] rounded-lg overflow-hidden bg-white shadow-xl">
@@ -66,12 +66,12 @@ export default function MinefieldPage() {
               <img src="/pathans.png" alt="Path Answer" className="max-w-xs md:max-w-md h-auto" />
             </div>
             <button onClick={startGame} className="btn-mystery text-2xl px-12 py-4">
-              START
+              PLAY
             </button>
           </div>
         )}
 
-        {/* PLAYING PORTION (5x5 GRID) */}
+        {/*grid*/}
         {gameState === "playing" && (
           <div className="grid grid-cols-5 gap-2 w-full max-w-[400px]">
             {Array.from({ length: 25 }).map((_, i) => {
@@ -94,25 +94,25 @@ export default function MinefieldPage() {
           </div>
         )}
 
-        {/* LOSE CONDITION */}
+        {/*lose condition you explodo rip*/}
         {gameState === "lost" && (
           <div className="flex flex-col items-center space-y-6 animate-pulse">
             <img src="/exploded.png" alt="Exploded" className="w-64 h-auto" />
-            <h3 className="text-3xl font-bold text-[#a91c1b]">ALARM TRIGGERED!</h3>
+            <h3 className="text-2xl font-serif font-bold italic text-[#a91c1b]">OOPS YOU EXPLODED</h3>
             <button onClick={() => setGameState("start")} className="btn-mystery">
               REPLAY
             </button>
           </div>
         )}
 
-        {/* WIN CONDITION */}
+        {/*win condition*/}
         {gameState === "won" && (
           <div className="flex flex-col items-center space-y-6">
-            <div className="bg-white p-8 border-4 border-[#ba8358] rounded-lg shadow-2xl">
-              <h3 className="text-4xl font-serif font-bold text-[#a91c1b] mb-4">
+            <div className="bg-white p-8 border-4 border-[#a91c1b] rounded-lg shadow-2xl">
+              <h3 className="text-3xl font-bold text-[#a91c1b]">
                 EVIDENCE FOUND!
               </h3>
-              <p className="text-xl font-bold text-black uppercase tracking-widest">
+              <p className="text-2xl font-serif font-bold italic text-black">
                 Location & route of murder uncovered.
               </p>
             </div>

@@ -84,40 +84,43 @@ export default function MemoryGamePage() {
   }, [cards, gameState]);
 
   return (
+    //title & description
     <div className="max-w-4xl mx-auto px-6 text-center pb-20">
-      <h2 className="text-2xl font-bold mb-4 uppercase text-[#ba8358]">How was the student murdered?</h2>
-      <p className="text-lg italic mb-10 max-w-2xl mx-auto">
+      <h2 className="text-2xl font-bold mb-4 uppercase text-[#ba8358]">Murder Method Investigation</h2>
+      <p className="text-xl italic text-black max-w-2xl mx-auto">
         Every tool has a pair except for the one used in the murder. 
         Match the tools to find the remaining tool, the murder weapon.
       </p>
+      <br></br>
+    <div className="bg-white/30 p-8 rounded-xl border-2 border-[#ba8358] min-h-[500px] flex flex-col items-center justify-center">
 
-      <div className="bg-white/30 p-8 rounded-xl border-2 border-[#ba8358] min-h-[500px] flex flex-col items-center justify-center">
+        {/*game component start*/}
         {gameState === "start" && (
           <button onClick={startGame} className="btn-mystery text-2xl px-12 py-4">
             PLAY
           </button>
         )}
 
+        {/*card style when playing*/}
         {gameState === "playing" && (
           <div className="grid grid-cols-3 gap-4">
             {cards.map((card, index) => (
               <div 
                 key={card.id}
                 onClick={() => handleCardClick(index)}
-                className={`w-24 h-32 md:w-32 md:h-44 cursor-pointer transition-all duration-300 transform ${card.solved ? 'opacity-0 scale-50' : ''}`}
-              >
+                className={`w-24 h-32 md:w-32 md:h-44 cursor-pointer transition-all duration-300 transform ${card.solved ? 'opacity-0 scale-50' : ''}`}>
                 <img 
                   src={card.flipped ? `/${card.type}.jpg` : "/wback.jpg"} 
                   alt="card"
-                  className="w-full h-full object-contain rounded-lg shadow-md border border-[#ba8358]"
-                />
+                  className="w-full h-full object-contain rounded-lg shadow-md border border-[#ba8358]"/>
               </div>
             ))}
           </div>
         )}
 
+        {/*win condition*/}
         {gameState === "finished" && (
-          <div className="flex flex-col items-center space-y-6 animate-bounce-slow">
+          <div className="flex flex-col items-center space-y-6">
             <h3 className="text-3xl font-bold text-[#a91c1b]">EVIDENCE FOUND!</h3>
             <div className="w-48 h-64 border-4 border-[#a91c1b] rounded-lg overflow-hidden bg-white">
               <img src={`/${murderWeapon}.jpg`} alt="Weapon" className="w-full h-full object-contain" />
