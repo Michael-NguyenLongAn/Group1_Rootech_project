@@ -1,35 +1,58 @@
 import Image from "next/image"; //img
 import Link from "next/link"; //btn
 
-export const metadata = {
-  title: "Murder Mystery: Death by Design",
-  description: "Bonding event for teams of 5. Can you solve the mystery?",
-};
-
 export default function Home() {
   return (
-    /* 2. We wrap everything in a "Fragment" <> or a single <div> */
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-4xl flex-col items-center justify-between py-24 px-8 bg-white dark:bg-black sm:items-start text-black dark:text-white">
+    <div className="max-w-6xl mx-auto px-6">
+      {/* Top Section: columns */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16 items-center">
         
-        {/* Your content goes here now */}
-        <section className="text-center sm:text-left">
-          <h1 className="text-5xl font-extrabold mb-4">Death by Design</h1>
-          <p className="text-zinc-500 dark:text-zinc-400 text-lg mb-8">
-            An elite architect has been found dead. The blueprint for murder is complex—are you sharp enough to solve it?
-          </p>
-          
-          <div className="flex gap-4">
-            <Link href="/sign-up" className="bg-red-600 px-6 py-3 rounded-md text-white font-bold">
-              Sign Up
-            </Link>
-            <Link href="/find-out-more" className="border border-zinc-300 dark:border-zinc-700 px-6 py-3 rounded-md font-bold">
-              Find Out More
-            </Link>
+        {/* Left Column: description & sign-up button */}
+        <div className="space-y-6">
+          <div>
+            <h2 className="text-2xl font-bold uppercase tracking-widest mb-2 border-b-2 border-[#ba8358] inline-block">
+              A body has been found.<br></br>
+              The evidence doesn’t add up. <br></br>
+            </h2>
+            <div className="text-xl leading-relaxed italic">
+              <p>☠️ DEATH BY DESIGN: A SUTD Murder Mystery ☠️</p>
+              <p>📅 4 February</p>
+              <p>🕝 2:30 – 4:30 PM</p>
+              <p>📍 ROOTCove</p>
+              <p>🍴 Snacks and drinks included!</p>
+              <br />
+              <p>This isn’t just a mystery — it’s a race against time. ⏳</p>
+              <p>Team up with your friends and dive into FOUR immersive booths...</p>
+              <p>The truth is buried in the ROOTCove on 4 February…</p>
+              <p>Do you have what it takes? 🫆🗂️</p>
+            </div>
           </div>
-        </section>
+          <a href="#signup-form" className="btn-mystery inline-block text-center no-underline">
+            Sign Up!
+          </a>
+        </div>
 
-      </main>
+        {/* Right Column: poster */}
+        <div className="border-4 border-[#ba8358] rounded shadow-2xl bg-white overflow-hidden">
+          <img 
+            src="/poster.jpg" 
+            alt="Poster for Murder Mystery"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      {/* Bottom Section: iframe form */}
+      <div id="signup-form" className="w-full mb-20 bg-white p-2 border border-[#ba8358] shadow-lg">
+        <iframe 
+          src="https://forms.cloud.microsoft/r/sBNq0UJ0fQ" 
+          width="100%" 
+          height="800" 
+          className="w-full"
+        >
+          Loading…
+        </iframe>
+      </div>
     </div>
   );
 }

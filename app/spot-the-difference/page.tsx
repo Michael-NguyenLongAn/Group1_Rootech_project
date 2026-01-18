@@ -1,66 +1,98 @@
-import Image from "next/image";
+"use client";
+import { useState } from "react";
+
+import Image from "next/image"; //img
+import Link from "next/link"; //btn
 
 
-export default function Home() {
+export default function SpotTheDifference() {
+  // 1. Track which differences have been found (using their IDs)
+  const [foundItems, setFoundItems] = useState<number[]>([]);
+  const totalDifferences = 3; // Change this based on your image
+
+  // 2. Logic to handle clicking a difference
+  const handleFound = (id: number) => {
+    if (!foundItems.includes(id)) {
+      setFoundItems([...foundItems, id]);
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-zinc-950 text-white p-8">
+      {/* Navigation */}
+      <Link href="/" className="text-zinc-500 hover:text-white transition-colors">
+        ← Back to Investigation
+      </Link>
+
+      <div className="max-w-6xl mx-auto mt-8">
+        <header className="text-center mb-10">
+          <h1 className="text-4xl font-bold mb-2 uppercase tracking-widest text-amber-500">
+            Case #01: Spot the Flaw
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-zinc-400">
+            Found: <span className="text-white font-mono text-xl">{foundItems.length} / {totalDifferences}</span>
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+        </header>
+
+        {/* 3. The Game Board */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          
+          {/* Left Side: Original Image */}
+          <div className="relative border-2 border-zinc-800 rounded-lg overflow-hidden">
+            <p className="absolute top-2 left-2 bg-black/50 px-2 py-1 text-xs uppercase">Original</p>
+            <Image 
+              src="/images/original.jpg" 
+              alt="Original Room" 
+              width={800} height={600} 
+              className="w-full h-auto"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+
+          {/* Right Side: Modified Image (Interactive) */}
+          <div className="relative border-2 border-amber-900/30 rounded-lg overflow-hidden cursor-crosshair">
+            <p className="absolute top-2 left-2 bg-black/50 px-2 py-1 text-xs uppercase">Find Differences</p>
+            
+            <Image 
+              src="/images/modified.jpg" 
+              alt="Modified Room" 
+              width={800} height={600} 
+              className="w-full h-auto"
+            />
+
+            {/* 4. Clickable Hidden Areas (Invisible Buttons) */}
+            {/* You will adjust the 'top' and 'left' % to match your image */}
+            
+            {/* Example Difference 1: The Bloody Blueprint */}
+            <button 
+              onClick={() => handleFound(1)}
+              style={{ top: '25%', left: '40%', width: '10%', height: '10%' }}
+              className={`absolute border-2 rounded-full transition-all ${foundItems.includes(1) ? 'border-green-500 bg-green-500/20' : 'border-transparent'}`}
+            />
+
+            {/* Example Difference 2: The Missing Lamp */}
+            <button 
+              onClick={() => handleFound(2)}
+              style={{ top: '60%', left: '75%', width: '12%', height: '15%' }}
+              className={`absolute border-2 rounded-full transition-all ${foundItems.includes(2) ? 'border-green-500 bg-green-500/20' : 'border-transparent'}`}
+            />
+
+            {/* Example Difference 3: The Weapon */}
+            <button 
+              onClick={() => handleFound(3)}
+              style={{ top: '80%', left: '15%', width: '8%', height: '8%' }}
+              className={`absolute border-2 rounded-full transition-all ${foundItems.includes(3) ? 'border-green-500 bg-green-500/20' : 'border-transparent'}`}
+            />
+          </div>
         </div>
-      </main>
-    </div>
+
+        {/* 5. Win Message */}
+        {foundItems.length === totalDifferences && (
+          <div className="mt-12 p-6 bg-green-900/20 border border-green-500 rounded-xl text-center animate-bounce">
+            <h2 className="text-2xl font-bold text-green-400">Case Solved!</h2>
+            <p>You found all the inconsistencies in the design.</p>
+          </div>
+        )}
+      </div>
+    </main>
   );
 }
