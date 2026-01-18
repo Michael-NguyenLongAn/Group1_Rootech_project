@@ -52,6 +52,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - i-frame of form
 
 ### By: Celine, Michael & Al
+### Media poster & cards from M&M Group 1 team
 Project restrictions:
 use React & Next.js
 
