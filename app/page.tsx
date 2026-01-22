@@ -6,7 +6,6 @@ export default function Home() {
     <div className="max-w-6xl mx-auto px-6">
       {/* Top Section: columns */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16 items-center">
-        
         {/* Left Column: description & sign-up button */}
         <div className="space-y-6">
           <div>
