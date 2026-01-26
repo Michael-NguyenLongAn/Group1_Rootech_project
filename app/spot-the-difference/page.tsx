@@ -37,6 +37,8 @@ export default function SpotTheDifference() {
 	const [foundIds, setFoundIds] = useState<number[]>([]);
 	const [gameState, setGameState] = useState<"Start" | "Playing" | "Won">("Playing");
 
+  //TODO error
+  /*
 	const handleClick = (x: number, y: number) => {
 		const spot = IMAGE_DIFFERENCES.find(
 			(s) => !foundIds.includes(s.id) && isInsideSpot(x, y, s)
@@ -48,7 +50,7 @@ export default function SpotTheDifference() {
 			setGameState("Won");
 		}
 	}
-};
+};*/
 
 return (
   <main className = "min-h-screen bg-amber-100 text-slate-900 p-8">
@@ -98,7 +100,8 @@ return (
               const rect = e.currentTarget.getBoundingClientRect();
               const x = e.clientX - rect.left;
               const y = e.clientY - rect.top;
-              handleClick(x, y);
+              //TODO error
+              //handleClick(x, y);
             }}
           >
             <Image
