@@ -1,6 +1,6 @@
 ### To View Website: https://murdermyst.vercel.app 
 
-# Group1_Rootech_project
+# Group1_Rootech_project for Murder Mystery Event
 ## Home Page:
 - posters
 - Description
