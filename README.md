@@ -44,17 +44,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - posters
 - Description
 - Sign-up button link
-- Find out more button (link to sample games)
+- sign-up i-frame
 
 ## Find out more
-- Button to each game
-- Instructions for the game
-- Game
+- navigation bar to each game
 
-## Sign-up form
-- i-frame of form
+### By: 
+Celine - home, Game2:Minefield, Game3:Memory
+Michael - Game4:Keep Talking
+Al - Game1:Spot the Difference
 
-### By: Celine, Michael & Al
 ### Media poster & cards from M&M Group 1 team
 Project restrictions:
 use React & Next.js
