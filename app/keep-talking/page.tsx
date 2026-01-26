@@ -51,10 +51,10 @@ export default function KeepTalkingPage() {
 
     // Clues to add
   const clues = [
-    { id: 1, src: "/clue1.jpg", hint: "A shadow." },
-    { id: 2, src: "/clue2.jpg", hint: "A branch." },
-    { id: 3, src: "/clue3.jpg", hint: "A lamb." },
-    { id: 4, src: "/clue4.jpg", hint: "A vessel." },
+    { id: 1, src: "/clue1.JPG", hint: "A shadow." },
+    { id: 2, src: "/clue2.JPG", hint: "A branch." },
+    { id: 3, src: "/clue3.JPG", hint: "A lamb." },
+    { id: 4, src: "/clue4.JPG", hint: "A vessel." },
   ];
     // Turn seconds into clock-like format
   const formatTime = (seconds: number) => {

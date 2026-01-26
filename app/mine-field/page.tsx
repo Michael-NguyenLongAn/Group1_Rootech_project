@@ -62,7 +62,6 @@ export default function MinefieldPage() {
         {gameState === "start" && (
           <div className="flex flex-col items-center space-y-6">
             <div className="border-4 border-[#ba8358] rounded-lg overflow-hidden bg-white shadow-xl">
-              {/* Ensure pathans.png is in your /public folder */}
               <img src="/pathans.png" alt="Path Answer" className="max-w-xs md:max-w-md h-auto" />
             </div>
             <button onClick={startGame} className="btn-mystery text-2xl px-12 py-4">
