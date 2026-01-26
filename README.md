@@ -11,9 +11,9 @@
 - navigation bar to each game
 
 ### By: 
-Celine - home, Game2:Minefield, Game3:Memory
-Michael - Game4:Keep Talking
-Al - Game1:Spot the Difference
+- Celine - home, Game2:Minefield, Game3:Memory
+- Michael - Game4:Keep Talking
+- Al - Game1:Spot the Difference
 
 ### Media poster & cards from M&M Group 1 team
 Project restrictions:
