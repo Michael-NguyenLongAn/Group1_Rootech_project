@@ -161,8 +161,8 @@ export default function KeepTalkingPage() {
         {/* 3. Lost Screen */}
         {gameState === "lost" && (
           <div className="flex flex-col items-center space-y-6 animate-in zoom-in duration-300">
-            <div className="border-8 border-red-900 rounded-lg overflow-hidden bg-black shadow-2xl w-full max-w-sm">
-              <img src="/fail.png" alt="Lockdown" className="w-full h-auto grayscale opacity-70" />
+            <div className="border-8 border-red-900 rounded-lg overflow-hidden w-full max-w-sm">
+              <img src="/fail.png" alt="Lockdown" className="w-full h-auto opacity-70 bg-white" />
             </div>
             <h3 className="text-4xl font-black text-red-600 uppercase tracking-tighter">
               {`SYSTEM LOCKDOWN`}
