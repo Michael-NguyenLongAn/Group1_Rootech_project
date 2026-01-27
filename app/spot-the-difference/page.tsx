@@ -22,7 +22,7 @@ const IMAGE_DIFFERENCES = [
 	{ id: 15, x: }*/
 ];
 
-function whatthediff(
+function isInsideSpot(
 	x: number,
 	y: number,
 	spot: { x: number; y: number; radius: number }
@@ -38,7 +38,6 @@ export default function SpotTheDifference() {
 	const [gameState, setGameState] = useState<"Start" | "Playing" | "Won">("Playing");
 
   //TODO error
-  /*
 	const handleClick = (x: number, y: number) => {
 		const spot = IMAGE_DIFFERENCES.find(
 			(s) => !foundIds.includes(s.id) && isInsideSpot(x, y, s)
@@ -46,11 +45,11 @@ export default function SpotTheDifference() {
 	if (spot) {
 		const newFound = [...foundIds, spot.id];
 		setFoundIds(newFound);
-		if (newFound.length === IMAGE.DIFFERENCES.length) {
+		if (newFound.length === IMAGE_DIFFERENCES.length) {
 			setGameState("Won");
 		}
 	}
-};*/
+};
 
 return (
   <main className = "min-h-screen bg-amber-100 text-slate-900 p-8">
@@ -101,7 +100,7 @@ return (
               const x = e.clientX - rect.left;
               const y = e.clientY - rect.top;
               //TODO error
-              //handleClick(x, y);
+              handleClick(x, y);
             }}
           >
             <Image
