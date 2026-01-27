@@ -5,21 +5,28 @@ import Image from "next/image"; //img
 import Link from "next/link"; //btn
 
 const IMAGE_DIFFERENCES = [
-	{ id: 1, x: 4, y: 20, radius: 20 },
-	{ id: 2, x: 120, y: 67, radius: 20 },
-	{ id: 3, x: 78, y: 64, radius: 20},
-	{ id: 4, x: 143, y: 163, radius: 20 },
-	{ id: 5, x: 410, y: 330, radius: 20 },
-	{ id: 6, x: 270, y: 170, radius: 20 },
-	/*{ id: 7, x: },
-	{ id: 8, x: },
-	{ id: 9, x: },
-	{ id: 10, x: },
-	{ id: 11, x: },
-	{ id: 12, x: },
-	{ id: 13, x: },
-	{ id: 14, x: },
-	{ id: 15, x: }*/
+	{ id: 1, x: 32, y: 118, radius: 28 },
+	{ id: 2, x: 32, y: 178, radius: 24 },
+	{ id: 3, x: 35, y: 286, radius: 20 },
+	{ id: 4, x: 25, y: 394, radius: 23 },
+	{ id: 5, x: 69, y: 401, radius: 20 },
+	{ id: 6, x: 88, y: 292, radius: 10 },
+	{ id: 7, x: 114, y: 316, radius: 10 },
+	{ id: 8, x: 138, y: 42, radius: 15 },
+	{ id: 9, x: 142, y: 209, radius: 12 },
+	{ id: 10, x: 132, y: 267, radius: 26 },
+	{ id: 11, x: 177, y: 267, radius: 18 },
+	{ id: 12, x: 180, y: 400, radius: 20 },
+	{ id: 13, x: 219, y: 372, radius: 20 },
+	{ id: 14, x: 256, y: 53, radius: 15 },
+	{ id: 15, x: 281, y: 200, radius: 12 },
+  { id: 16, x: 310, y: 357, radius: 16 },
+  { id: 17, x: 289, y: 472, radius: 20 },
+  { id: 18, x: 340, y: 436, radius: 16 },
+  { id: 19, x: 370, y: 49, radius: 17 },
+  { id: 20, x: 377, y: 349, radius: 14 },
+  { id: 21, x: 448, y: 136, radius: 30 },
+  { id: 22, x: 448, y: 337, radius: 25 }
 ];
 
 function whatthediff(
@@ -45,7 +52,7 @@ export default function SpotTheDifference() {
 	if (spot) {
 		const newFound = [...foundIds, spot.id];
 		setFoundIds(newFound);
-		if (newFound.length === IMAGE_DIFFERENCES.length) {
+		if (newFound.length === 15) {
 			setGameState("Won");
 		}
 	}
@@ -66,6 +73,9 @@ return (
         <p className = "italic text-black text-lg mb-3 text-center">
           Compare <strong>Image A</strong> with <strong>Image B</strong>.
       	</p>
+        <p className = "italic text-black text-lg mb-4 text-center">
+          There are a total of <strong>22</strong> differences. Look for at least <strong>15</strong> within the 3 minutes to win the game.
+        </p>
         <p className = "italic text-black text-lg mb-4 text-center">
           Spot Clues- misplaced items... missing objects... details of suspect.
         </p>
