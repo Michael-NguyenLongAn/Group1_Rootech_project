@@ -51,10 +51,10 @@ export default function KeepTalkingPage() {
 
     // Clues to add
   const clues = [
-    { id: 1, src: "/clue1.JPG", hint: "A shadow." },
-    { id: 2, src: "/clue2.JPG", hint: "A branch." },
-    { id: 3, src: "/clue3.JPG", hint: "A lamb." },
-    { id: 4, src: "/clue4.JPG", hint: "A vessel." },
+    { id: 1, src: "/clue1.JPG", hint: "In a world of divided light, look where the sun cannot reach. Stand tall in the void before the first step is taken." },
+    { id: 2, src: "/clue2.JPG", hint: "Nature mimics what we count. Follow the curve of the frozen reach where the white sky meets the wood." },
+    { id: 3, src: "/clue3.JPG", hint: "A beacon in the dark reveals more than the path. Behind the leaves, the light holds a steady square." },
+    { id: 4, src: "/clue4.JPG", hint: "The music plays on, but the rhythm is caught on the edge. Seek the pillar that stays still while the world spins by." },
   ];
     // Turn seconds into clock-like format
   const formatTime = (seconds: number) => {
@@ -162,7 +162,7 @@ export default function KeepTalkingPage() {
         {gameState === "lost" && (
           <div className="flex flex-col items-center space-y-6 animate-in zoom-in duration-300">
             <div className="border-8 border-red-900 rounded-lg overflow-hidden w-full max-w-sm">
-              <img src="/fail.png" alt="Lockdown" className="w-full h-auto opacity-70 bg-white" />
+              <img src="/fail.gif" alt="Lockdown" className="w-full h-auto opacity-70 bg-white" />
             </div>
             <h3 className="text-4xl font-black text-red-600 uppercase tracking-tighter">
               {`SYSTEM LOCKDOWN`}
@@ -185,10 +185,10 @@ export default function KeepTalkingPage() {
             <div className="bg-white p-10 border-4 border-green-600 rounded-lg shadow-2xl">
               <div className="text-6xl mb-4">🔓</div>
               <h3 className="text-4xl font-bold text-green-600 mb-2 uppercase">{`Access Granted`}</h3>
-              <p className="text-xl font-serif font-bold italic text-black">{`The door has successfully opened.`}</p>
+              <p className="text-xl font-serif font-bold italic text-black">{`Can you do the same at the event?`}</p>
             </div>
             <button onClick={resetGame} className="text-[#ba8358] font-bold uppercase tracking-widest hover:underline">
-              {`RESET DOOR`}
+              {`To Be Continue...`}
             </button>
           </div>
         )}
