@@ -5,12 +5,12 @@ import Image from "next/image"; //img
 import Link from "next/link"; //btn
 
 const IMAGE_DIFFERENCES = [
-	{ id: 1, x: 4, y: 20, radius: 30 },
-	{ id: 2, x: 120, y: 67, radius: 30 },
-	{ id: 3, x: 78, y: 64, radius: 30},
-	{ id: 4, x: 143, y: 163, radius: 30 },
-	{ id: 5, x: 410, y: 330, radius: 30 },
-	{ id: 6, x: 270, y: 170, radius: 30 },
+	{ id: 1, x: 4, y: 20, radius: 20 },
+	{ id: 2, x: 120, y: 67, radius: 20 },
+	{ id: 3, x: 78, y: 64, radius: 20},
+	{ id: 4, x: 143, y: 163, radius: 20 },
+	{ id: 5, x: 410, y: 330, radius: 20 },
+	{ id: 6, x: 270, y: 170, radius: 20 },
 	/*{ id: 7, x: },
 	{ id: 8, x: },
 	{ id: 9, x: },
@@ -22,7 +22,7 @@ const IMAGE_DIFFERENCES = [
 	{ id: 15, x: }*/
 ];
 
-function isInsideSpot(
+function whatthediff(
 	x: number,
 	y: number,
 	spot: { x: number; y: number; radius: number }
@@ -40,7 +40,7 @@ export default function SpotTheDifference() {
   //TODO error
 	const handleClick = (x: number, y: number) => {
 		const spot = IMAGE_DIFFERENCES.find(
-			(s) => !foundIds.includes(s.id) && isInsideSpot(x, y, s)
+			(s) => !foundIds.includes(s.id) && whatthediff(x, y, s)
 		);
 	if (spot) {
 		const newFound = [...foundIds, spot.id];
@@ -78,23 +78,23 @@ return (
       <div className = "flex gap-8 justify-center">
         {/* LEFT: Compare (non-clickable) */}
         <div>
-          <h3 className = "text-xl font-bold mb-3 text-red-400">📸 Image A
+          <h3 className = "text-xl font-bold mb-3 text-red-400">📸 Image A:
 	  </h3>
           <Image
             src = "/spd before.png"
             alt = "Scene before crime"
-            width = {450}
-            height = {350}
+            width = {500}
+            height = {400}
             className = "rounded-2xl shadow-2xl border-4 border-red-900/70"
           />
         </div>
 
         {/* RIGHT: Answer (clickable) */}
         <div>
-          <h3 className = "text-xl font-bold mb-3 text-blue-400">🔍 Image B
+          <h3 className = "text-xl font-bold mb-3 text-blue-400">🔍 Image B:
 	  </h3>
           <div
-            className = "relative w-[450px] h-[350px] rounded-2xl shadow-2xl border-4 border-brown-900/70 cursor-crosshair hover: border-4 border-yellow-600/70 transition-all duration-300"
+            className = "relative w-[500px] h-[400px] rounded-2xl shadow-2xl border-4 border-brown-900/70 cursor-crosshair hover: border-4 border-yellow-600/70 transition-all duration-300"
             onClick={(e) => {
               const rect = e.currentTarget.getBoundingClientRect();
               const x = e.clientX - rect.left;
@@ -106,8 +106,8 @@ return (
             <Image
               src = "/spd after.png"
               alt = "Scene after crime"
-	      width = {450}
-	      height = {350}
+	            width = {500}
+	            height = {400}
               className = "rounded-2xl shadow-2xl border-4 border-blue-900/70"
             />
             
