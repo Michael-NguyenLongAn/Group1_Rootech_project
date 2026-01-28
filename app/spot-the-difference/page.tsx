@@ -85,10 +85,10 @@ return (
       </div>
 
       {/* Images */}
-      <div className = "flex gap-8 justify-center">
+      <div className = "flex flex-col lg:flex-row gap-6 lg:gap-8 justify-center px-4 max-w-[1100px] mx-auto">
         {/* LEFT: Compare (non-clickable) */}
-        <div>
-          <h3 className = "text-xl font-bold mb-3 text-red-400">📸 Image A:
+        <div className = "flex flex-col items-center lg:flex-col">
+          <h3 className = "text-xl font-bold mb-4 text-red-400 text-center">📸 Image A
 	  </h3>
           <Image
             src = "/spd before.png"
@@ -100,11 +100,11 @@ return (
         </div>
 
         {/* RIGHT: Answer (clickable) */}
-        <div>
-          <h3 className = "text-xl font-bold mb-3 text-blue-400">🔍 Image B:
+        <div className = "flex flex-col items-center lg:flex-col">
+          <h3 className = "text-xl font-bold mb-4 text-blue-400 text-center">🔍 Image B
 	  </h3>
-          <div
-            className = "relative w-[500px] h-[400px] rounded-2xl shadow-2xl border-4 border-brown-900/70 cursor-crosshair hover: border-4 border-yellow-600/70 transition-all duration-300"
+          <div className = "relative rounded-2xl shadow-2xl border-4 border-blue-900/70 cursor-crosshair hover:border-yellow-500/80 transition-all duration-300"
+            style = {{ width: 500, height: 400}}
             onClick={(e) => {
               const rect = e.currentTarget.getBoundingClientRect();
               const x = e.clientX - rect.left;
@@ -116,9 +116,9 @@ return (
             <Image
               src = "/spd after.png"
               alt = "Scene after crime"
-	            width = {500}
-	            height = {400}
-              className = "rounded-2xl shadow-2xl border-4 border-blue-900/70"
+              width = {500}
+              height = {400}
+              className = "absolute inset-0 rounded-2xl shadow-2xl border-4 border-blue-900/70 object-cover"
             />
             
             {/* Found clues - pulsing circles */}
