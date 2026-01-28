@@ -74,7 +74,7 @@ return (
           Compare <strong>Image A</strong> with <strong>Image B</strong>.
       	</p>
         <p className = "italic text-black text-lg mb-4 text-center">
-          There are a total of <strong>22</strong> differences. Look for at least <strong>15</strong> of them to win the game.
+          There are a total of <strong>22</strong> differences. Look for at least <strong>15</strong> of them to win the game. Click on <strong>Image B</strong> to begin.
         </p>
         <p className = "italic text-black text-lg mb-4 text-center">
           Spot Clues- misplaced items... missing objects... details of suspect.
