@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { useState } from "react";
 
 import Image from "next/image"; //img
@@ -41,16 +42,33 @@ function whatthediff(
 
 
 export default function SpotTheDifference() {
-	const [foundids, setFoundIds] = useState<number[]>([]);
-	const [gamestate, setGameState] = useState<"Start" | "Playing" | "Won">("Playing");
+	const [found_ids, setFoundIds] = useState<number[]>([]);
+  const [time_left, setTimeLeft] = useState(180);
+	const [game_state, setGameState] = useState<"Start"|"Playing"|"Won"|"Lost">("Playing");
+
+  useEffect(() => {
+    if (game_state !== "Playing") {
+      return;
+    }
+    if (time_left === 0) {
+      setGameState("Lost");
+      return;
+    }
+    const id = setInterval(() => {
+      setTimeLeft((t) => t - 1);
+    }, 1000);
+    return () => clearInterval(id);
+  }, [game_state, time_left]);
+  }
 
   //TODO error
 	const handleClick = (x: number, y: number) => {
+    if (game_state !== "Playing") return;
 		const spot = IMAGE_DIFFERENCES.find(
-			(s) => !foundids.includes(s.id) && whatthediff(x, y, s)
+			(s) => !found_ids.includes(s.id) && whatthediff(x, y, s)
 		);
 	if (spot) {
-		const newFound = [...foundids, spot.id];
+		const newFound = [...found_ids, spot.id];
 		setFoundIds(newFound);
 		if (newFound.length === 15) {
 			setGameState("Won");
@@ -74,13 +92,13 @@ return (
           Compare <strong>Image A</strong> with <strong>Image B</strong>.
       	</p>
         <p className = "italic text-black text-lg mb-4 text-center">
-          There are a total of <strong>22</strong> differences. Look for at least <strong>15</strong> of them to win the game.
+          There are a total of <strong>22</strong> differences. Look for at least <strong>15</strong> within the 3 minutes to win the game.
         </p>
         <p className = "italic text-black text-lg mb-4 text-center">
           Spot Clues- misplaced items... missing objects... details of suspect.
         </p>
         <div className = "text-xl font-mono bg-slate-200/80 p-3 rounded-lg text-slate-800">
-          🔍 Clues: <span className = "text-green-400">{foundids.length}</span>/{IMAGE_DIFFERENCES.length} found
+          ⏱️ Timer: 3:00 |🔍 Clues: <span className = "text-green-400">{found_ids.length}</span>/{IMAGE_DIFFERENCES.length} found
         </div>
       </div>
 
@@ -122,7 +140,7 @@ return (
             />
             
             {/* Found clues - pulsing circles */}
-            {IMAGE_DIFFERENCES.filter((d) => foundids.includes(d.id)).map((d) => (
+            {IMAGE_DIFFERENCES.filter((d) => found_ids.includes(d.id)).map((d) => (
               <div
                 key = {d.id}
                 className = "absolute border-4 border-emerald-400 bg-emerald-400/50 rounded-full animate-pulse shadow-lg pointer-events-none"
@@ -139,7 +157,7 @@ return (
       </div>
 
       {/* Win screen */}
-      {gamestate === "Won" && (
+      {game_state === "Won" && (
         <div className = "mt-12 text-center p-12 bg-gradient-to-r from-emerald-900/80 to-green-900/80 border-4 border-emerald-400 rounded-3xl backdrop-blur-md shadow-2xl">
           <h2 className = "text-4xl font-bold mb-6 text-emerald-400">🎉 Case Closed!
 	  </h2>
@@ -161,3 +179,4 @@ return (
 );
 
 }
+
