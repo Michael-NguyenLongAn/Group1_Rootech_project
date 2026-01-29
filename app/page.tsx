@@ -24,9 +24,11 @@ export default function Home() {
               <p>Team up with your friends and dive into FOUR immersive booths...</p>
               <p>The truth is buried in the ROOTCove on 4 February…</p>
               <p>Do you have what it takes? 🫆🗂️</p>
+              <br />
+              <p>Try playing the games using the top navigation bar</p>
             </div>
           </div>
-          <a href="#signup-form" className="btn-mystery inline-block text-center no-underline">
+          <a href="https://forms.cloud.microsoft/r/sBNq0UJ0fQ" className="btn-mystery inline-block text-center no-underline">
             Sign Up!
           </a>
         </div>
@@ -43,6 +45,9 @@ export default function Home() {
 
       {/* Bottom Section: iframe form */}
       <div id="signup-form" className="w-full mb-20 bg-white p-2 border border-[#ba8358] shadow-lg">
+        <div className="text-xl leading-relaxed italic">
+          <h2>If not loading use <a href="https://forms.cloud.microsoft/r/sBNq0UJ0fQ" className="text-blue-500 hover:text-blue-700">this link</a> or view on computer</h2>
+        </div>
         <iframe 
           src="https://forms.cloud.microsoft/r/sBNq0UJ0fQ" 
           width="100%" 
