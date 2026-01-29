@@ -15,17 +15,18 @@ export default function Home() {
             </h2>
             <div className="text-xl leading-relaxed italic">
               <p>☠️ DEATH BY DESIGN: A SUTD Murder Mystery ☠️</p>
-              <p>📅 4 February</p>
-              <p>🕝 2:30 – 4:30 PM</p>
+              <p>📅 4<sup>th</sup> February 2025</p>
+              <p>🕝 2:30 PM – 4:30 PM</p>
               <p>📍 ROOTCove</p>
               <p>🍴 Snacks and drinks included!</p>
               <br />
               <p>This isn’t just a mystery — it’s a race against time. ⏳</p>
               <p>Team up with your friends and dive into FOUR immersive booths...</p>
-              <p>The truth is buried in the ROOTCove on 4 February…</p>
+              <p>The truth is buried in the ROOTCove on 4<sup>th</sup> February…</p>
               <p>Do you have what it takes? 🫆🗂️</p>
               <br />
-              <p>Try playing the games using the top navigation bar</p>
+              <p>Try playing the games using the top navigation bar.</p>
+              <p>Use a desktop for better experience!</p>
             </div>
           </div>
           <a href="https://forms.cloud.microsoft/r/sBNq0UJ0fQ" className="btn-mystery inline-block text-center no-underline">
