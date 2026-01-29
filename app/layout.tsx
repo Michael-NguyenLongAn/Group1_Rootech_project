@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <nav style={{ backgroundColor: 'var(--mystery-accent)' }} className="p-4 shadow-md">
           <ul className="flex flex-wrap justify-center gap-4 md:gap-10 font-bold text-black uppercase list-none m-0 p-0 text-sm md:text-base">
             <li><Link href="/" className="hover:text-white transition whitespace-nowrap">|Home| </Link></li>
-            <li><Link href="/spot-the-difference" className="hover:text-white transition whitespace-nowrap">|Game1: Spot Difference| </Link></li>
+            <li><Link href="/spot-the-difference" className="hover:text-white transition whitespace-nowrap">|Game1: Spot The Difference| </Link></li>
             <li><Link href="/mine-field" className="hover:text-white transition whitespace-nowrap">|Game2: Minefield| </Link></li>
             <li><Link href="/memory-game" className="hover:text-white transition whitespace-nowrap">|Game3: Memory| </Link></li>
             <li><Link href="/keep-talking" className="hover:text-white transition whitespace-nowrap">|Game4: Keep Talking| </Link></li>

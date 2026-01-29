@@ -103,7 +103,7 @@ return (
         <div className = "flex flex-col items-center lg:flex-col">
           <h3 className = "text-xl font-bold mb-4 text-blue-400 text-center">🔍 Image B
 	  </h3>
-          <div className = "relative rounded-2xl shadow-2xl border-4 border-blue-900/70 cursor-crosshair hover:border-yellow-500/80 transition-all duration-300"
+          <div className = "relative w-[350px] h-[280px] lg:w-[500px] lg:h-[400px] rounded-2xl border-5 border-blue-900/70 cursor-crosshair hover:border-yellow-500/80 transition-all duration-300"
             style = {{ width: 500, height: 400}}
             onClick={(e) => {
               const rect = e.currentTarget.getBoundingClientRect();
